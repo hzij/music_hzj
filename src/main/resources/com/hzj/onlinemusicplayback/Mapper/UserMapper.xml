@@ -6,8 +6,8 @@
 <!--
         namespace:这是mapper接口的全类名
         -->
-<mapper namespace="com.hzj.Mapper.UserMapper">
-    <select id="login" resultType="com.hzj.pojo.User">
-        select id,username,password where username=#{username}
+<mapper namespace="com.hzj.onlinemusicplayback.Mapper.UserMapper">
+    <select id="login" resultType="com.hzj.onlinemusicplayback.pojo.User">
+        select * from user where username=#{username}
     </select>
 </mapper>

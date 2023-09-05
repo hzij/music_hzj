@@ -18,12 +18,13 @@ import javax.servlet.http.HttpServletRequest;
  * @Create 2023/9/4  17:11
  * @edition 1.0
  */
-@RestController("/user")
+@RestController
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
     private UserService userService;
-    @PostMapping("login")
+    @PostMapping("/login")
     public ResponseBodyMessage<User> login(@RequestParam String username, @RequestParam String password, HttpServletRequest request){
         ResponseBodyMessage<User> userLoginMessage = userService.login(username, password,request);
         return userLoginMessage;

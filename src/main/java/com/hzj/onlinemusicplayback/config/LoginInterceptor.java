@@ -24,7 +24,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HttpSession session = request.getSession(false);
         Object attribute = request.getSession().getAttribute(Constant.USERINFO_SESSION_KEY);
-        if (session!=null && attribute!=null){
+        if (session!=null || attribute!=null){
             //登录成功
             return true;
         }
