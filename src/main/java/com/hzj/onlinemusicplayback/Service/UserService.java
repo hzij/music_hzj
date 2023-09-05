@@ -1,7 +1,8 @@
 package com.hzj.onlinemusicplayback.Service;
 
-import com.hzj.pojo.User;
-import com.hzj.utils.ResponseBodyMessage;
+import com.hzj.onlinemusicplayback.pojo.User;
+import com.hzj.onlinemusicplayback.utils.ResponseBodyMessage;
+
 
 import javax.servlet.http.HttpServletRequest;
 

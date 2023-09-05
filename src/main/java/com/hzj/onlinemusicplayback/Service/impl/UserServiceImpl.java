@@ -1,10 +1,11 @@
 package com.hzj.onlinemusicplayback.Service.impl;
 
-import com.hzj.Mapper.UserMapper;
-import com.hzj.Service.UserService;
-import com.hzj.pojo.User;
-import com.hzj.utils.Constant;
-import com.hzj.utils.ResponseBodyMessage;
+
+import com.hzj.onlinemusicplayback.Mapper.UserMapper;
+import com.hzj.onlinemusicplayback.Service.UserService;
+import com.hzj.onlinemusicplayback.pojo.User;
+import com.hzj.onlinemusicplayback.utils.Constant;
+import com.hzj.onlinemusicplayback.utils.ResponseBodyMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

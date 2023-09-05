@@ -1,6 +1,7 @@
 package com.hzj.onlinemusicplayback.Mapper;
 
-import com.hzj.pojo.User;
+import com.hzj.onlinemusicplayback.pojo.User;
+
 import org.apache.ibatis.annotations.Mapper;
 
 /**
