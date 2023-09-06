@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--这是映射文件，编写sql语句-->
+<!--
+        namespace:这是mapper接口的全类名
+        -->
+<mapper namespace="com.hzj.onlinemusicplayback.Mapper.LoveMusicMapper">
+<select id="selectLoveById" resultType="com.hzj.onlinemusicplayback.pojo.LoveMusic">
+    select * from lovemusic where user_id=#{userid} and music_id=#{musicid}
+</select>
+<insert id="insertLove">
+            insert into lovemusic(user_id,music_id) values(#{userid},#{musicid})
+</insert>
+<select id="selectCollectMusicById"  resultType="com.hzj.onlinemusicplayback.pojo.Music">
+    select m.* from lovemusic lm,music m where m.id = lm.music_id and lm.user_id=#{userid};
+</select>
+<select id="selectCollectMusic"  resultType="com.hzj.onlinemusicplayback.pojo.Music">
+    select m.* from lovemusic lm,music m where m.id = lm.music_id and lm.user_id=#{userid}
+    and title like concat('%',#{musicName},'%');
+</select>
+</mapper>

@@ -4,6 +4,8 @@ import com.hzj.onlinemusicplayback.pojo.Music;
 import com.hzj.onlinemusicplayback.utils.ResponseBodyMessage;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * PackageName :com.hzj.onlinemusicplayback.Mapper
  * ClassName: MusicMapper
@@ -21,4 +23,24 @@ public interface MusicMapper {
     //上传的歌曲添加到数据库中
     Boolean insertMusic(String title,String singer,String time,String url,Integer userid);
 
- }
+    /**
+     * 根据歌曲名查询歌曲
+     * @param musicname
+     * @return
+     */
+    List<Music>  selectAllMusicByName(String musicname);
+
+    List<Music>  selectAllMusic();
+
+    /**
+     * 删除单个歌曲，并查询重新显示
+     * @param musicid
+     * @return
+     */
+    int  deleteSingleRow(int musicid);
+
+    Music  selectMusicById(int musicid);
+
+
+
+}

@@ -8,10 +8,21 @@
         -->
 <mapper namespace="com.hzj.onlinemusicplayback.Mapper.MusicMapper">
 <select id="QuerySongs" resultType="com.hzj.onlinemusicplayback.pojo.Music">
-    select * from music where  title=#{title} and singer=#{singer}
+        select * from music where  title=#{title} and singer=#{singer}
 </select>
 <insert id="insertMusic" >
         insert into  music(title,singer,time,url,userid) values(#{title},#{singer},#{time},#{url},#{userid})
 </insert>
-
+<select id="selectAllMusicByName" resultType="com.hzj.onlinemusicplayback.pojo.Music">
+        select * from music where title like concat('%',#{musicName},'%')
+</select>
+<select id="selectAllMusic" resultType="com.hzj.onlinemusicplayback.pojo.Music">
+        select * from music
+</select>
+<delete id="deleteSingleRow" parameterType="java.lang.Integer">
+        delete from music where id=#{id}
+</delete>
+<select id="selectMusicById"  resultType="com.hzj.onlinemusicplayback.pojo.Music">
+        select * from music where id=#{id}
+</select>
 </mapper>
